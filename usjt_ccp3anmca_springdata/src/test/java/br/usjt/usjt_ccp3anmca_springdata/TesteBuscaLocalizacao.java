@@ -15,11 +15,11 @@ public class TesteBuscaLocalizacao {
 	private LocalizacaoRepository Locrepository;
 	
 	@Test
-	public void testQuery() throws InterruptedException, ExecutionException {
+	public void test() throws InterruptedException, ExecutionException {
 		Localizacao Loc1 = Locrepository.buscaPorCidade("São Paulo");
-		Loc1.forEach(System.out::println);
+		System.out.println(Loc1);
 		Localizacao Loc2 = Locrepository.buscaPorLatitudeELongitude(2,5);
-		Loc2.forEach(System.out::println);
+		System.out.println(Loc2);
 	}
 
 }

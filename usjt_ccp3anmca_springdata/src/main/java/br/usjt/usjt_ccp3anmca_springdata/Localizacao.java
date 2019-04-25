@@ -10,10 +10,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 
-@NamedQuery (name = "Localizacao.buscaPorCidade", query = "SELECT l FROM Localizacao l WHERE cidade = :cidade")
+@NamedQuery (name = "Localizacao.buscaPorCidade", 
+             query = "SELECT l FROM Localizacao l WHERE cidade = :cidade")
 
-@NamedQuery (name = "Localizacao.buscaPorLatitudeELongitude", query =
-             "SELECT l FROM Localizacao l WHERE latitude = :latitude AND longitude = :longitude")
+@NamedQuery (name = "Localizacao.buscaPorLatitudeELongitude", 
+             query = "SELECT l FROM Localizacao l WHERE latitude = :latitude AND longitude = :longitude")
 
 
 @Entity
