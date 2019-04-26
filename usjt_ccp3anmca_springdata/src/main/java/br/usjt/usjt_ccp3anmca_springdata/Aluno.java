@@ -11,10 +11,13 @@ import javax.persistence.Table;
 
 @NamedQuery (name = "Aluno.buscarPeloNomeEPeloEmail",
 query = "SELECT a FROM Aluno a WHERE nome = :nome AND email = :email")
+
 @Entity
 @Table(name = "tb_aluno")
 public class Aluno implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

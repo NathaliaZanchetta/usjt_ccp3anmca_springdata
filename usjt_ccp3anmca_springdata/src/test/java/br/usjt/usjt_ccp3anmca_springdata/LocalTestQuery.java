@@ -11,15 +11,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class QueryExplicitaTest {
+public class LocalTestQuery {
+	
 	@Autowired
-	private AlunoRepository alunoRepo;
+	private LocalizacaoRepository LocalRepo;
 
 	@Test
-	public void testQueryExplicita() throws InterruptedException, ExecutionException {
-		List<Aluno> alunos1 = alunoRepo.buscarPeloEmail("ana@usjt.br");
-		alunos1.forEach(System.out::println);
-		List<Aluno> alunos2 = alunoRepo.buscarPorLetraInicialDoNome("a");
-		alunos2.forEach(System.out::println);
+	public void testLocalizacaoQuery() throws InterruptedException, ExecutionException {
+		LocalizacaoRepository Loc1 = (LocalizacaoRepository) LocalRepo.buscaPorCidade("São Paulo");
+		System.out.println(Loc1);
+		
+		LocalizacaoRepository Loc2 = (LocalizacaoRepository) LocalRepo.buscaPorLatitudeELongitude(5,6);
+		System.out.println(Loc2);
 	}
+
 }

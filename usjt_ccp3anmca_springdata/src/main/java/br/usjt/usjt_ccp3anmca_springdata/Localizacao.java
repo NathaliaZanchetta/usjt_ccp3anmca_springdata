@@ -6,16 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.springframework.data.jpa.repository.Query;
 
-@NamedQuery (name = "Localizacao.buscaPorCidade", 
-             query = "SELECT l FROM Localizacao l WHERE cidade = :cidade")
+@NamedQueries({
+@NamedQuery (name = "Localizacao.buscaPorCidadeNQ", 
+             query = "SELECT l FROM Localizacao l WHERE cidade = :cidade"),
 
-@NamedQuery (name = "Localizacao.buscaPorLatitudeELongitude", 
-             query = "SELECT l FROM Localizacao l WHERE latitude = :latitude AND longitude = :longitude")
-
+@NamedQuery(name = "Localizacao.buscaPorLatitudeELongitudeNQ", 
+            query = "SELECT l FROM Localizacao l WHERE latitude = :latitude AND longitude = :longitude") })
 
 @Entity
 @Table(name = "tb_Localizacao")

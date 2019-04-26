@@ -13,6 +13,7 @@ import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AlunoTest {
+	
 	@Autowired
 	private AlunoRepository alunoRepository;
 
